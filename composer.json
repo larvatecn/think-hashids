@@ -1,0 +1,47 @@
+{
+    "name": "larva/think-hashids",
+    "description": "A Hashids bridge for ThinkPHP",
+    "license": "MIT",
+    "homepage": "https://www.larva.com.cn",
+    "support": {
+        "issues": "https://github.com/larvatecn/think-hashids/issues",
+        "source": "https://github.com/larvatecn/think-hashids"
+    },
+    "authors": [
+        {
+            "name": "Larva Team",
+            "email": "support@larva.com.cn"
+        }
+    ],
+    "require": {
+        "php": "^7.3 || ^8.0",
+        "graham-campbell/manager": "^4.4",
+        "hashids/hashids": "^4.1"
+    },
+    "require-dev": {
+        "topthink/framework": "^6.0.7"
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "think": {
+            "services": [
+                "Larva\\Hashids\\HashidsService"
+            ],
+            "config": {
+                "hashids": "config\\hashids.php"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Larva\\Hashids\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
