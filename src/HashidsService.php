@@ -5,22 +5,22 @@ declare(strict_types=1);
 namespace Larva\Hashids;
 
 use Hashids\Hashids;
-use think\Container;
+use think\Service;
 
-class HashidsService extends \think\Service
+/**
+ * 服务提供者
+ * @author Tongle Xu <xutongle@gmail.com>
+ */
+class HashidsService extends Service
 {
-
+    /**
+     * 注册服务
+     */
     public function register(): void
     {
         $this->app->bind('hashids.connection', function () {
-            $config = Container::getInstance()->get('config')->get('hashids');
-            return new Hashids($config['salt'], $config['salt'], $config['length'] ?? 0, $config['alphabet']);
+            $config = $this->app['config']->get('hashids');
+            return new Hashids($config['salt'], $config['length'] ?? 0, $config['alphabet']);
         });
-        $this->registerBindings();
-    }
-
-    protected function registerBindings(): void
-    {
-
     }
 }

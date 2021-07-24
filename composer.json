@@ -15,7 +15,6 @@
     ],
     "require": {
         "php": "^7.3 || ^8.0",
-        "graham-campbell/manager": "^4.4",
         "hashids/hashids": "^4.1"
     },
     "require-dev": {
