@@ -18,7 +18,7 @@ class HashidsService extends Service
      */
     public function register(): void
     {
-        $this->app->bind('hashids.connection', function () {
+        $this->app->bind('hashids', function () {
             $config = $this->app['config']->get('hashids');
             return new Hashids($config['salt'], $config['length'] ?? 0, $config['alphabet']);
         });
